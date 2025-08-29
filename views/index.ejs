@@ -1,21 +1,23 @@
-<%- include('partials/header', { title: 'All Posts' }) %>
+<%- include('partials/header.ejs') %>
 
-<h1>All Posts</h1>
-<a href="/name">Create New Post</a>
-<ul>
-  <% if (posts.length === 0) { %>
-    <li>No posts yet.</li>
-  <% } else { %>
-    <% posts.forEach(post => { %>
-      <li>
-        <strong><%= post.name %></strong>: <%= post.content %>
-        <form action="/delete/<%= post.id %>" method="POST" style="display:inline;">
-          <button type="submit">Delete</button>
+<div class="container">
+    <a href="/name" class="btn">Create New Post</a>
+    <div class="blog-grid">
+        <% if (typeof posts !== 'undefined' && posts.length > 0) { %>
+            <% posts.forEach(post => { %>
+                <div class="blog-card">
+                    <h2 class="blog-card-title"><%= post.name %></h2>
+                    <p class="blog-card-excerpt"><%= post.content.substring(0, 100) %>...</p>
+                    <a href="/edit/<%= post.id %>" class="btn">Read More</a>
+                    <form action="/delete/<%= post.id %>" method="POST" style="display:inline;">
+          <button class="btn" type="submit">Delete</button>
         </form>
-        <a href="/edit/<%= post.id %>">Edit</a>
-      </li>
-    <% }) %>
-  <% } %>
-</ul>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>No posts yet. Create one!</p>
+        <% } %>
+    </div>
+</div>
 
-<%- include('partials/footer') %>
+<%- include('partials/footer.ejs') %>

@@ -1,11 +1,10 @@
-<%- include('profiles/header', { title: `Blog by ${name}` }) %>
+<%- include('partials/header.ejs') %>
 
-<div class="blog-container">
-  <div class="author"><%= name %></div>
-  <div class="content"><%= content %></div>
-  <form action="/edit" method="post">
-    <button>Edit</button>
-  </form>
+<div class="container">
+    <div class="result-container">
+        <h1 class="result-title"><%= message %></h1>
+        <a href="/" class="btn">Back to Home</a>
+    </div>
 </div>
 
-<%- include('profiles/footer') %>
+<%- include('partials/footer.ejs') %>

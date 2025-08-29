@@ -1,12 +1,11 @@
-<%- include('partials/header', { title: 'Write Your Blog' }) %>
+<%- include('partials/header.ejs') %>
 
-<h1>Welcome, <%= name %>!</h1>
-<form action="/submit" method="POST">
-  <input type="hidden" name="name" value="<%= name %>">
-  <label for="content">Your Blog:</label><br>
-  <textarea id="content" name="content" rows="30" cols="80" required></textarea><br>
-  <button type="submit">Submit Blog</button>
-</form>
+<div class="container">
+    <h1 class="blog-post-title"><%= post.name %></h1>
+    <div class="blog-post-content">
+        <p><%= post.content %></p>
+    </div>
+</div>
 
-<%- include('partials/footer') %>
+<%- include('partials/footer.ejs') %>
 
