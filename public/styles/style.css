@@ -1,0 +1,35 @@
+/* Common styles used by all pages */
+
+textarea {
+  width: 90vw;
+  height: 40vh;
+  font-size: 1.2em;
+  margin: 20px 0;
+  display: block;
+}
+
+.header {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.blog-container {
+  border: 2px solid #222;
+  padding: 32px;
+  max-width: 900px;
+  margin: 40px auto;
+  background: #f9f9f9;
+  border-radius: 14px;
+  font-size: 1.3em;
+}
+
+.author {
+  font-weight: bold;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.content {
+  margin-top: 16px;
+  white-space: pre-wrap;
+}

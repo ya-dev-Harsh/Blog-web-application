@@ -1,0 +1,11 @@
+<%- include('partials/header', { title: 'Enter Name' }) %>
+
+<h1>Enter Your Name</h1>
+<form action="/blog" method="POST">
+  <label for="name">Name:</label>
+  <input id="name" name="name" type="text" required />
+  <button type="submit">Continue</button>
+</form>
+
+<%- include('partials/footer') %>
+

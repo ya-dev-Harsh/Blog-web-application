@@ -1,0 +1,11 @@
+<%- include('profiles/header', { title: `Blog by ${name}` }) %>
+
+<div class="blog-container">
+  <div class="author"><%= name %></div>
+  <div class="content"><%= content %></div>
+  <form action="/edit" method="post">
+    <button>Edit</button>
+  </form>
+</div>
+
+<%- include('profiles/footer') %>
