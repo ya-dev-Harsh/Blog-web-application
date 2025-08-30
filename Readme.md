@@ -29,7 +29,7 @@ This project is a simple blog application built using **Node.js**, **Express**, 
 1. Clone the repository: git clone https://github.com/ya-dev-Harsh/Blog-web-application.git
 
 
-2. Navigate to the project directory: cd <file-location>
+2. Navigate to the project directory: cd 'file-location'
 
 
 3. Install the dependencies: npm i
