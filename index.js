@@ -12,8 +12,18 @@ let posts = []; // In-memory store for posts
 
 // Home - show all posts
 app.get("/", (req, res) => {
-  res.render("index.ejs", { posts });
+  const blogPosts = posts.filter(post => post.content);
+  res.render("index.ejs", { posts: blogPosts });
 });
+
+
+app.get('/about', (req,res) => {
+  res.render('about.ejs')
+})
+
+app.get('/contact', (req,res) => {
+  res.render('contact.ejs')
+})
 
 // Name input form (optional step)
 app.get("/name", (req, res) => {
@@ -50,6 +60,17 @@ app.post('/edit/:id', (req, res) => {
   post.content = content;
   res.redirect('/');
 });
+
+app.post('/contact', (req, res) => {
+
+  const {name,email,message} = req.body;
+  const id = Date.now().toString();
+  posts.push({ id, name,email, message });
+  console.log(posts);
+
+  res.redirect('/');
+});
+
 
 // Delete a post
 app.post('/delete/:id', (req, res) => {
